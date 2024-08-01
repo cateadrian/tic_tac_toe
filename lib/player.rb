@@ -10,7 +10,7 @@ class Player
   end
 
   def make_choice
-    print "Please choose a position (1-9): "
+    print "Player #{@icon} please choose a position (1-9): "
     choice = gets.chomp.to_i - 1
     choice
   end
