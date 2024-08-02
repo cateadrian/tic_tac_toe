@@ -1,8 +1,11 @@
 class Board
+  attr_reader :winner
+
   def initialize
     @state = [" ", " ", " ", 
               " ", " ", " ",
               " ", " ", " "]
+
   end
 
   def state
@@ -11,5 +14,9 @@ class Board
 
   def player_move(player, choice)
     @state[choice] = player
+  end
+  
+  def full?
+    @state.any?{|element| element == " "}
   end
 end
