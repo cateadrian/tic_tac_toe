@@ -18,16 +18,15 @@ class Board
   end
   
   def full?
-    @state.any?{|element| element == " "}
+    @state.all?{|element| element != " "}
   end
 
   def winner?(player, player_moves)
     @win_combos.each do |combos|
       if (combos-player_moves).empty?
         @winner = true
-        # puts "Do we have a winner? #{@winner}"
       end
     end
-    @winner
   end
+  
 end
