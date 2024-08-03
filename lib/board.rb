@@ -5,7 +5,7 @@ class Board
     @state = [" ", " ", " ", 
               " ", " ", " ",
               " ", " ", " "]
-
+              
   end
 
   def state
