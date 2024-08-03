@@ -5,7 +5,8 @@ class Board
     @state = [" ", " ", " ", 
               " ", " ", " ",
               " ", " ", " "]
-              
+    @win = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
+    @winner =  false
   end
 
   def state
@@ -18,5 +19,15 @@ class Board
   
   def full?
     @state.any?{|element| element == " "}
+  end
+
+  def winner?(player, player_moves)
+    @win.each do |array|
+      if (array-player_moves).empty?
+        @winner = true
+        # puts "Do we have a winner? #{@winner}"
+      end
+    end
+    @winner
   end
 end
