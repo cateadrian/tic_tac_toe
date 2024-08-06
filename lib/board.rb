@@ -16,6 +16,13 @@ class Board
   def player_move(player, choice)
     @state[choice] = player
   end
+
+  def check_moves(choice)
+    while @state[choice] != " "
+      print "That spot has already been chosen. Please choose again: "
+      choice = gets.chomp.to_i - 1 
+    end
+  end
   
   def full?
     @state.all?{|element| element != " "}
