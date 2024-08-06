@@ -13,8 +13,9 @@ class Player
   def make_choice
     print "Player #{@icon} please choose a position (1-9): "
     choice = gets.chomp.to_i - 1
-    @moves.push(choice + 1)
-    choice
   end
 
+  def add_move(choice)
+    @moves.push(choice + 1)
+  end
 end
