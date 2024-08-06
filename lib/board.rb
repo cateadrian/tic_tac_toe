@@ -22,6 +22,7 @@ class Board
       print "That spot has already been chosen. Please choose again: "
       choice = gets.chomp.to_i - 1 
     end
+    choice
   end
   
   def full?
