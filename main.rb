@@ -16,11 +16,15 @@ until board.winner
   case player_turn
   when 1
     choice = player_x.make_choice
+    choice = board.check_moves(choice)
+    player_x.add_move(choice)
     board.player_move(player_x.icon, choice)
     board.winner?(player_x.icon, player_x.moves)
     player_turn = 2
   when 2
     choice = player_o.make_choice
+    choice = board.check_moves(choice)
+    player_o.add_move(choice)
     board.player_move(player_o.icon, choice)
     board.winner?(player_o.icon, player_o.moves)
     player_turn = 1
